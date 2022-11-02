@@ -36,7 +36,7 @@ specialites = ["allergologie", "Anatomie et cytologie pathologique",
 villes = ["Assistance publique-hôpitaux de Paris", 
           "Assistance publique des hôpitaux de Marseille",
           "hospices civils de Lyon","CHU de Bordeaux","CHU de Nice",
-          "CHU de Nantes","CHU de Nantes","CHU de Montpellier","CHU de Lille",
+          "CHU de Nantes","CHU de Montpellier","CHU de Lille",
           "CHU de Caen","CHU de Toulouse","CHU de Tours","CHU de Limoges",
           "CHU de Rennes","CHU de Grenoble","CHU de Saint-Etienne",
           "CHU de Clermont-Ferrand","CHU de Nancy","CHU de Strasbourg",
@@ -53,6 +53,7 @@ else :
           + " spécialités médicales et chirurgicales")
     #file.seek(0)
     readlines_file = file.readlines()
+    file.close()
     irf=[]
     for i in range(0,len(readlines_file)) : irf.append(readlines_file[-1-i]) 
     res,spes_traitees,villes_traitees = [],[],[]
@@ -77,4 +78,3 @@ else :
             if len(res) > 0:             
                 print("Le rang maximun pour que quelque soit son premier choix, "
                       +"celui-ci soit retenu est: "+str(min(res))) 
-file.close()
