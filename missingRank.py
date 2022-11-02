@@ -7,9 +7,6 @@ Created on Fri Oct 28 15:13:46 2022
 import checking as chckg
 
 def missingRanks(path_string:str):
-    #file = open("AECN-2021.txt", "r", encoding="UTF-8") 
-    #file = open("Rang-ECN-2021.txt", "r", encoding="UTF-8") 
-    #file.seek(0)
     file = open(path_string, "r", encoding="UTF-8") 
     readlines_file = file.readlines()
     file.close()
@@ -20,7 +17,6 @@ def missingRanks(path_string:str):
             allRanks.append(tmpRank)
     consecutiveRanks = list(range(1,max(allRanks)+1))
     missingRanks = chckg.resteListe(consecutiveRanks, allRanks)
-    #print(missingRanks)
     return missingRanks
     
 def searchByRanks(ranksInput:list[int]):
